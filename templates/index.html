@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <div class="px-4 py-3 my-2 text-center">
+
+            <h1 class="display-6 fw-bold text-primary">My Content</h1>
+          </div>
+        <form method="get"  action="{{'https://openclassroom.azurewebsites.net/api/test'}}" enctype="multipart/form-data">
+            <div class="col-md-6 mx-auto text-center">
+                <label class="form-label fw-bold fs-5">Selectionnez l'utilisateur:</label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <select name="usr" id="usr">
+                         {%for i in range(0, 100)%}
+                          <option value="{{usrlist[i]}}">{{usrlist[i]}}</option>
+                         {%endfor%}
+                    </select>
+                  </div>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3" onclick="myFunction()" >Soumaitre votre l'utilisateur</button>
+                </div>
+            </div>
+        </form>
+{% endblock %}
